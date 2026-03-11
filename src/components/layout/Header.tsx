@@ -10,7 +10,7 @@ interface HeaderProps {
   onTabChange: (tab: Tab) => void
 }
 
-export function Header({ walletAddress, onWalletConnect, activeTab, onTabChange }: HeaderProps) {
+export function Header({ onWalletConnect, activeTab, onTabChange }: HeaderProps) {
   const { wallet, loading, connect, disconnect } = useOPNetWallet()
 
   const handleConnect = async () => {

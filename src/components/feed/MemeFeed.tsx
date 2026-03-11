@@ -54,14 +54,14 @@ export function MemeFeed({ walletAddress }: MemeFeedProps) {
     }
   ]
 
-  const handleTip = (memeId: string) => {
-    if (!walletAddress) {
-      alert('Please connect your wallet first!')
-      return
-    }
-    console.log('Tipping meme:', memeId)
-    // Will integrate with OP_NET contracts
-  }
+  // const handleTip = (memeId: string) => {
+  //   if (!walletAddress) {
+  //     alert('Please connect your wallet first!')
+  //     return
+  //   }
+  //   console.log('Tipping meme:', memeId)
+  //   // Will integrate with OP_NET contracts
+  // }
 
   const handleCollect = (memeId: string) => {
     if (!walletAddress) {
@@ -180,7 +180,7 @@ export function MemeFeed({ walletAddress }: MemeFeedProps) {
                   creatorAddress={meme.creatorAddress}
                   tips={meme.tips}
                   collectors={meme.collectors}
-                  onTipSuccess={(tipId, amount) => {
+                  onTipSuccess={(amount) => {
                     // Update the meme's tips count
                     meme.tips += amount
                     // Force re-render

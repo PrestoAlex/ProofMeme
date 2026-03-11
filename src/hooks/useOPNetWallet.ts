@@ -61,7 +61,7 @@ async function connectWallet(): Promise<WalletResult> {
       throw new Error('No wallet accounts returned');
     }
 
-    const provider = getProvider();
+    // const provider = getProvider();
     WalletState.connected = true;
     WalletState.address = accounts[0];
 

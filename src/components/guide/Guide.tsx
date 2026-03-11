@@ -2,17 +2,15 @@ import { useState } from 'react'
 import { 
   Bitcoin, 
   Trophy, 
-  Users, 
-  TrendingUp, 
-  Zap, 
-  Shield, 
-  Globe, 
-  Coins,
-  ChevronRight,
   CheckCircle,
-  ArrowRight,
   Sparkles,
-  Heart
+  Heart,
+  Coins,
+  Users,
+  Globe,
+  Zap,
+  Shield,
+  TrendingUp
 } from 'lucide-react'
 
 interface GuideProps {

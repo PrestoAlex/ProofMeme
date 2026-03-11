@@ -1,5 +1,18 @@
 import { useState, useEffect, useRef } from 'react'
-import { Bitcoin, Trophy, Flame, Clock, Share2, ExternalLink, Copy, Check, Edit2, Save, X, User, Camera } from 'lucide-react'
+import { 
+  User, 
+  Edit2, 
+  Save, 
+  X, 
+  Camera, 
+  ExternalLink, 
+  Trophy, 
+  Bitcoin,
+  Check,
+  Copy,
+  Flame,
+  Clock
+} from 'lucide-react'
 import { useOPNetWallet } from '../../hooks/useOPNetWallet'
 import { MemeTipper } from '../tipping/MemeTipper'
 
@@ -447,7 +460,7 @@ export function Profile({ walletAddress }: ProfileProps) {
                       creatorAddress={walletAddress}
                       tips={meme.tips}
                       collectors={meme.collectors}
-                      onTipSuccess={(tipId, amount) => {
+                      onTipSuccess={(amount) => {
                         // Update the meme's tips count
                         meme.tips += amount
                         // Force re-render

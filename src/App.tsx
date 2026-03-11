@@ -25,7 +25,7 @@ function App() {
       case 'vault':
         return <MemeVault walletAddress={walletAddress} />
       case 'leaderboard':
-        return <Leaderboard walletAddress={walletAddress} />
+        return <Leaderboard />
       case 'profile':
         return <Profile walletAddress={walletAddress} />
       case 'guide':
