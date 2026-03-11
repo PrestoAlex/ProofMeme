@@ -1,0 +1,20 @@
+{
+  "extends": "@btc-vision/assemblyscript/asconfig.json",
+  "targets": {
+    "release": {
+      "outFile": "build/MemeMinter.wasm",
+      "textFile": "build/MemeMinter.wat",
+      "sourceMap": true,
+      "debug": false,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false
+    }
+  },
+  "options": {
+    "transform": "@btc-vision/opnet-transform",
+    "exportRuntime": true,
+    "runtime": "stub"
+  }
+}

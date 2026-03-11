@@ -1,0 +1,8 @@
+node_modules/
+.env
+build/
+abis/
+*.wasm
+*.wat
+*.map
+.DS_Store

@@ -1,0 +1,33 @@
+{
+  "targets": {
+    "release": {
+      "outFile": "build/MemeTipper.wasm",
+      "textFile": "build/MemeTipper.wat",
+      "sourceMap": true,
+      "debug": false,
+      "optimizeLevel": 3,
+      "shrinkLevel": 0,
+      "converge": false,
+      "noAssert": false,
+      "use": ["abort=src/tipping/index/abort"]
+    }
+  },
+  "options": {
+    "transform": "@btc-vision/opnet-transform",
+    "exportRuntime": true,
+    "runtime": "stub",
+    "sourceMap": false,
+    "enable": [
+      "sign-extension",
+      "mutable-globals",
+      "nontrapping-f2i",
+      "bulk-memory",
+      "simd",
+      "reference-types",
+      "multi-value"
+    ],
+    "memoryBase": 0,
+    "initialMemory": 1,
+    "exportStart": "start"
+  }
+}

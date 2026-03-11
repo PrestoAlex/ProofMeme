@@ -1,0 +1,26 @@
+# Deployed Contract Addresses - ProofOfMeme
+# Generated on: 2026-03-11
+
+## ✅ Successfully Deployed:
+- MemeMinter: opt1sqphrwx62s6cdtt96hdm77z5tz3xrg7ugwckt5qlt
+- MemeTipper: opt1sqqv3aj7cvad0s24t2y595mx5xw6vx02l8u59chmr
+
+## ⏳ Pending Confirmation:
+- MemeRanker: opt1sqz6x4r5t2uf338l3yhw8wplpxq0wrxy0xgclupl5
+- MemeCounter: Failed to deploy (Unavailable For Legal Reasons)
+
+## 📋 Previous Addresses (for reference):
+- MemeMinter (old): opt1sqrkrkhs8860x2f2mmg73sunmg8tuc5yqzqd57quz
+- MemeTipper (old): opt1sqzvtvv4axx09mvfyweul7vgegfxs4m53ksjtdhzm
+
+## 🔗 OPScan Links:
+- MemeMinter: https://opscan.org/address/opt1sqphrwx62s6cdtt96hdm77z5tz3xrg7ugwckt5qlt?network=op_testnet
+- MemeTipper: https://opscan.org/address/opt1sqqv3aj7cvad0s24t2y595mx5xw6vx02l8u59chmr?network=op_testnet
+- MemeRanker: https://opscan.org/address/opt1sqz6x4r5t2uf338l3yhw8wplpxq0wrxy0xgclupl5?network=op_testnet
+
+## 📝 Notes:
+- MemeMinter and MemeTipper deployed successfully
+- MemeRanker deployed but waiting for confirmation
+- MemeCounter failed due to network issues
+- Need to wait for blockchain confirmation
+- Update frontend with new addresses after confirmation

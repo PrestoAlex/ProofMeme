@@ -1,0 +1,44 @@
+{
+  "name": "satsmeme-contracts",
+  "version": "1.0.0",
+  "description": "SatsMeme - Bitcoin Meme Economy Smart Contracts",
+  "main": "index.js",
+  "scripts": {
+    "build:meme": "asc src/meme/index.ts --target release --config asconfig-meme.json",
+    "build:tipping": "asc src/tipping/index.ts --target release --config asconfig-tipping.json",
+    "build:ranking": "asc src/ranking/index.ts --target release --config asconfig-ranking.json",
+    "build:stats": "asc src/stats/index.ts --target release --config asconfig-stats.json",
+    "build:all": "npm run build:meme && npm run build:tipping && npm run build:ranking && npm run build:stats",
+    "deploy:meme": "tsx deploy.ts meme",
+    "deploy:tipping": "tsx deploy.ts tipping",
+    "deploy:ranking": "tsx deploy.ts ranking",
+    "deploy:stats": "tsx deploy.ts stats",
+    "deploy:all": "npm run deploy:meme && npm run deploy:tipping && npm run deploy:ranking && npm run deploy:stats"
+  },
+  "keywords": [
+    "bitcoin",
+    "opnet",
+    "meme",
+    "nft",
+    "social",
+    "tipping"
+  ],
+  "author": "SatsMeme Team",
+  "license": "MIT",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.28.9",
+    "@btc-vision/as-bignum": "^0.1.2",
+    "@btc-vision/btc-runtime": "^1.11.0-rc.10",
+    "@btc-vision/transaction": "^1.8.0",
+    "dotenv": "^17.3.1",
+    "opnet": "^1.8.2"
+  },
+  "devDependencies": {
+    "@btc-vision/assemblyscript": "^0.29.2",
+    "@btc-vision/bitcoin": "^7.0.0",
+    "@btc-vision/opnet-transform": "^1.2.0",
+    "assemblyscript": "^0.28.9",
+    "tsx": "^4.0.0",
+    "typescript": "^5.9.3"
+  }
+}
