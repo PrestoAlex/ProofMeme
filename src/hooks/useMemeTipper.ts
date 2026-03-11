@@ -94,11 +94,11 @@ export function useMemeTipper(walletAddress: string | null) {
           type: entry.type.toLowerCase() === 'function' ? BitcoinAbiTypes.Function : entry.type,
           inputs: (entry.inputs || []).map((input: any) => ({
             ...input,
-            type: ABIDataTypes[input.type.toUpperCase()] || input.type,
+            type: (ABIDataTypes as any)[input.type.toUpperCase()] || input.type,
           })),
           outputs: (entry.outputs || []).map((output: any) => ({
             ...output,
-            type: ABIDataTypes[output.type.toUpperCase()] || output.type,
+            type: (ABIDataTypes as any)[output.type.toUpperCase()] || output.type,
           })),
         }));
       };
