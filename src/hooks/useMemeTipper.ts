@@ -51,17 +51,19 @@ export function useMemeTipper(walletAddress: string | null) {
 
   // Dynamic SDK loading
   const getSDK = useCallback(async () => {
-    const sdk = await import(/* @vite-ignore */ 'https://esm.sh/opnet@1.8.1-rc.17');
+    // Use local opnet package instead of external URL
+    const opnet = await import('opnet');
     return {
-      getContract: sdk.getContract,
-      JSONRpcProvider: sdk.JSONRpcProvider,
-      ABIDataTypes: sdk.ABIDataTypes,
-      BitcoinAbiTypes: sdk.BitcoinAbiTypes,
+      getContract: opnet.getContract,
+      JSONRpcProvider: opnet.JSONRpcProvider,
+      ABIDataTypes: opnet.ABIDataTypes,
+      BitcoinAbiTypes: opnet.BitcoinAbiTypes,
     };
   }, []);
 
   const getBitcoin = useCallback(async () => {
-    const bitcoin = await import(/* @vite-ignore */ 'https://esm.sh/@btc-vision/bitcoin@7.0.0-rc.6');
+    // Use local @btc-vision/bitcoin package
+    const bitcoin = await import('@btc-vision/bitcoin');
     return bitcoin;
   }, []);
 
@@ -259,7 +261,7 @@ export function useMemeTipper(walletAddress: string | null) {
       
       if (result.ok && result.properties) {
         // Parse the result from real contract
-        const totalTips = Number(result.properties.total) || state.totalTips;
+        const totalTips = Number((result.properties as any).total) || state.totalTips;
         
         setState(prev => ({
           ...prev,
