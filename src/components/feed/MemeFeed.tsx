@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { Heart, Users, Clock, Coins, Share2 } from 'lucide-react'
-import { MemeTipper } from '../tipping/MemeTipper'
+import { SatoshiTipButton } from '../tipping/SatoshiTipButton'
 
 interface Meme {
   id: string
@@ -175,15 +175,12 @@ export function MemeFeed({ walletAddress }: MemeFeedProps) {
 
               {/* Actions */}
               <div className="flex items-center gap-2 pt-2">
-                <MemeTipper
+                <SatoshiTipButton
                   memeId={parseInt(meme.id)}
-                  creatorAddress={meme.creatorAddress}
+                  walletAddress={walletAddress}
                   tips={meme.tips}
-                  collectors={meme.collectors}
                   onTipSuccess={(amount) => {
-                    // Update the meme's tips count
                     meme.tips += amount
-                    // Force re-render
                     setFilter(prev => prev)
                   }}
                 />

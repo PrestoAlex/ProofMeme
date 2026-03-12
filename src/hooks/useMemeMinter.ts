@@ -27,7 +27,7 @@ const NETWORK_PARAM = 'op_testnet';
 
 // MemeMinter ABI
 const MEMEMINTER_ABI = [
-  { type: 'function', name: 'mintMeme', inputs: [], outputs: [{ name: 'memeId', type: 'uint256' }] },
+  { type: 'function', name: 'mintMeme', inputs: [], outputs: [{ name: 'memeId', type: 'uint256' }]},
   { type: 'function', name: 'getMemeCount', inputs: [], outputs: [{ name: 'count', type: 'uint256' }] },
 ];
 
@@ -39,8 +39,7 @@ export function useMemeMinter(walletAddress: string | null) {
     error: null,
   });
 
-  // Contract address from deployment (NEW)
-  const CONTRACT_ADDRESS = 'opt1sqphrwx62s6cdtt96hdm77z5tz3xrg7ugwckt5qlt';
+  const CONTRACT_ADDRESS = ((import.meta as any)?.env?.VITE_MEME_MINTER_ADDRESS as string | undefined) || 'opt1sqzas5sfwvqly6py209ueu62ynewyat8ca5a3p90l';
 
   // Dynamic SDK loading
   const getSDK = useCallback(async () => {
@@ -201,11 +200,9 @@ export function useMemeMinter(walletAddress: string | null) {
     setState(prev => ({ ...prev, loading: true, error: null }));
 
     try {
-      // Convert to BigInt for OP_NET compatibility
       const result = await callWriteMethod('mintMeme', []);
       
       if (result.ok && result.txid) {
-        // Mock successful mint with new meme ID
         const newMemeId = state.totalMemes + 1;
         
         setState(prev => ({
@@ -245,8 +242,7 @@ export function useMemeMinter(walletAddress: string | null) {
       const result = await callViewMethod('getMemeCount', []);
       
       if (result.ok && result.properties) {
-        // Parse the result - mock for now
-        const count = state.totalMemes + Math.floor(Math.random() * 10);
+        const count = Number((result.properties as any)?.count ?? state.totalMemes);
         
         setState(prev => ({
           ...prev,

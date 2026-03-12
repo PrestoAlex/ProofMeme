@@ -13,7 +13,8 @@
     "deploy:tipping": "tsx deploy.ts tipping",
     "deploy:ranking": "tsx deploy.ts ranking",
     "deploy:stats": "tsx deploy.ts stats",
-    "deploy:all": "npm run deploy:meme && npm run deploy:tipping && npm run deploy:ranking && npm run deploy:stats"
+    "deploy:all": "npm run deploy:meme && npm run deploy:tipping && npm run deploy:ranking && npm run deploy:stats",
+    "deploy:enhanced": "tsx deploy-enhanced.ts"
   },
   "keywords": [
     "bitcoin",

@@ -5,10 +5,10 @@ export function checkContractAddresses() {
   
   // Known addresses from deployment
   const contracts = {
-    memeMinter: 'opt1sqrkrkhs8860x2f2mmg73sunmg8tuc5yqzqd57quz',
-    memeTipper: 'opt1sqzvtvv4axx09mvfyweul7vgegfxs4m53ksjtdhzm',
-    memeRanker: 'opt1sqrkrkhs8860x2f2mmg73sunmg8tuc5yqzqd57quz', // Same as MemeMinter?
-    memeCounter: 'opt1sqzvtvv4axx09mvfyweul7vgegfxs4m53ksjtdhzm' // Same as MemeTipper?
+    memeMinter: 'opt1sqzas5sfwvqly6py209ueu62ynewyat8ca5a3p90l',
+    memeTipper: 'opt1sqrzr4un3n8yqa8sc2cavxnlrtjspg6cwtypc3nep',
+    memeRanker: 'opt1sqztnyjgly5gj6zyclmc2vwjdrrjzsyahsq50tjuq',
+    memeCounter: 'opt1sqqg0472jx3cgufe2ud49gd0qfyqc6ntvxyq27msm'
   };
   
   console.log('📋 Contract Addresses:');
@@ -22,10 +22,11 @@ export function checkContractAddresses() {
     console.log(`${name}: https://opscan.org/address/${address}?network=op_testnet`);
   });
   
-  console.log('\n⚠️  Issues Found:');
-  console.log('- MemeRanker and MemeMinter have same address');
-  console.log('- MemeCounter and MemeTipper have same address');
-  console.log('- This suggests deployment may have failed or addresses are incorrect');
+  console.log('\n✅ Contracts Status:');
+  console.log('- MemeMinter: Enhanced version deployed ✅');
+  console.log('- MemeTipper: Rebuilt tipping contract deployed ✅');
+  console.log('- MemeRanker: Original version (needs Enhanced deployment)');
+  console.log('- MemeCounter: Original version (needs Enhanced deployment)');
   
   return contracts;
 }

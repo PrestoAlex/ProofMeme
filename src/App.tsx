@@ -7,7 +7,6 @@ import { Leaderboard } from './components/leaderboard/Leaderboard'
 import { Profile } from './components/profile/Profile'
 import { Guide } from './components/guide/Guide'
 import { BackgroundMusic } from './components/layout/BackgroundMusic'
-import './utils/debugOPNet' // Debug OP_NET API
 import './utils/contractDebug' // Debug contract addresses
 
 type Tab = 'feed' | 'create' | 'vault' | 'leaderboard' | 'profile' | 'guide'

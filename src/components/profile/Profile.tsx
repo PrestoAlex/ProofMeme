@@ -14,7 +14,7 @@ import {
   Clock
 } from 'lucide-react'
 import { useOPNetWallet } from '../../hooks/useOPNetWallet'
-import { MemeTipper } from '../tipping/MemeTipper'
+import { SatoshiTipButton } from '../tipping/SatoshiTipButton'
 
 interface Meme {
   id: number
@@ -455,15 +455,12 @@ export function Profile({ walletAddress }: ProfileProps) {
 
                   {/* Actions */}
                   <div className="flex items-center gap-2 pt-2">
-                    <MemeTipper
+                    <SatoshiTipButton
                       memeId={meme.id}
-                      creatorAddress={walletAddress}
+                      walletAddress={walletAddress}
                       tips={meme.tips}
-                      collectors={meme.collectors}
                       onTipSuccess={(amount) => {
-                        // Update the meme's tips count
                         meme.tips += amount
-                        // Force re-render
                         setUserMemes(prev => [...prev])
                       }}
                     />
